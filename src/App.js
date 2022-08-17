@@ -9,8 +9,12 @@ function App() {
   return (
     <div className="App">
       <header>
-        <Link to="/login">LOGIN</Link>
 
+        <nav>
+          <Link to="/">Home</Link>
+          <Link to="/single-post">Post</Link>
+          <Link to="/login">LOGIN</Link>
+        </nav>
       </header>
 
        <Routes>
