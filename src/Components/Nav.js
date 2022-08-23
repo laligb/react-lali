@@ -15,19 +15,20 @@ function Nav() {
 
     <>
       <nav className="nav-items">
-          <Link to="/">Home</Link>
+
 
           <DropdownButton
             as={ButtonGroup}
-            key="myKey"
-            id="button"
-            title="👤"
+            key='Info'
+            id="dropdown-variants-Info"
+            title="👨"
+            variant="Info"
           >
         {
           localStorage.getItem('auth')!=null?
           (
 
-            <Dropdown.Item eventKey="1"><Link to="" onClick={Logout}>Logout</Link></Dropdown.Item>
+            <Dropdown.Item eventKey="1"><Link to="/" onClick={Logout}>Logout</Link></Dropdown.Item>
 
           ):
             <Dropdown.Item eventKey="1"> <Link to="/login">Login</Link></Dropdown.Item>

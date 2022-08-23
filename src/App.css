@@ -1,6 +1,13 @@
 .App{
   background-color:darkcyan;
 }
+.navbar a{
+  color:  #008CBA;
+}
+
+.nav-items{
+  font-size: 10px;
+}
 
 h2{
   color: darkcyan;
@@ -16,11 +23,11 @@ h2{
 
 
 .nav-items{
-  padding: 20px;
+  padding: 10px;
 }
 
 .logo{
-  width: 100px;
+  width: 90px;
 }
 
 .login{

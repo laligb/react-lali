@@ -9,25 +9,36 @@ import SocialFollow from "./Components/SocialFollow";
 import Nav from "./Components/Nav";
 
 
+
 function App() {
+
   return (
     <div className="App">
-      <header className=" navbar navbar-expand-lg navbar-dark bg-dark">
+      <header className="navbar navbar-expand-lg navbar-dark bg-dark">
         <logo className="nav-items">
-          <img src={require('./logo.png')} className="logo" alt="logo" />
+        <Link to="/"><img src={require('./logo.png')} className="logo" alt="logo" /></Link>
         </logo>
 
-        <form className="d-flex">
+        <form className="d-flex col-lg-3">
           <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-          <button className="btn btn-outline-success" type="submit">Search</button>
+          <button className="btn btn-outline-info" type="submit">Search</button>
         </form>
 
-        <Nav/>
+        <div className="col-lg-6">
 
+        </div>
 
-        <div className="socials nav-items">
+        <div className="">
+          <Nav/>
+        </div>
+
+        <div className="socials nav-items col-lg-3">
           <SocialFollow />
         </div>
+
+
+
+
       </header>
       <div className="container">
 
