@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {useNavigate} from 'react-router-dom'
+import Users from './Users';
 
 function Login() {
   const [name, setName] = useState("");
@@ -11,25 +12,15 @@ function Login() {
     navigate('/')
   }
 
-  const [users, setUsers]=useState([])
-
-  // useEffect(()=>{
-  //   fetch('https://jsonplaceholder.typicode.com/users')
-  //   .then((res)=> res.json())
-  //   .then((data)=> setUsers(data))
-  // }, [users])
-
 
 
   const SuccessLogin=(auth)=>{
-      useEffect(()=>{
-        fetch('https://jsonplaceholder.typicode.com/users')
-        .then((res)=> res.json())
-        .then((data)=> setUsers(data))
-      }, [users])
-      users.map((value)=>{value === auth})
+    console.log(name)
+    console.log(password)
 
     }
+
+
 
   // sachiroa gaketdes value
 
@@ -42,7 +33,7 @@ function Login() {
             <input type="text" onChange={(e)=>setName(e.currentTarget.value)}  className='login-form' placeholder='username' />
             <input type="password" onChange={(e)=>setPassword(e.currentTarget.value)}  className='login-form' placeholder='password'/>
             <br/>
-            <button type='submit' className='login-form login-button' onClick={()=>SuccessLogin(value)}>Login</button>
+            <button type='submit' className='login-form login-button' onClick={()=>SuccessLogin()}>Login</button>
         </form>
         <p>Aren't registered? You can register here</p>
       </div>

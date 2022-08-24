@@ -7,6 +7,9 @@ import Login from "./Pages/Login";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SocialFollow from "./Components/SocialFollow";
 import Nav from "./Components/Nav";
+import Users from "./Pages/Users";
+import Posts from "./Pages/Posts";
+import Profile from "./Pages/Profile";
 
 
 
@@ -45,8 +48,11 @@ function App() {
        <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/single-post" element={<SinglePost/>}/>
+        <Route path="/posts/:id" element={<SinglePost/>}/>
+        <Route path="/posts" element={<Posts/>}/>
         <Route path="/login" element={<Login/>}/>
+        <Route path="/users" element={<Users/>}/>
+        <Route path="/users/:id" element={<Profile/>}/>
       </Routes>
       </div>
     </div>
