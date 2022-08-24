@@ -9,7 +9,7 @@ function Users() {
     .then((res)=> res.json())
     .then((data)=> setUsers(data))
   }, [users])
-  console.log(users)
+
   return (
     <div>
       {users.map((user)=>{

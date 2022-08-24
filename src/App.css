@@ -54,3 +54,14 @@ h2{
 .login-button:hover{
   background-color:aqua;
 }
+
+.post{
+  padding: 20px;
+  background-color: white;
+  margin: 10px;
+  border-top: #008CBA;
+}
+
+.title{
+  font-weight: bold;
+}
