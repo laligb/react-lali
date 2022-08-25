@@ -10,6 +10,7 @@ function Users() {
     .then((data)=> setUsers(data))
   }, [users])
 
+
   return (
     <div className='col-lg-10'>
       <h2>Users</h2>

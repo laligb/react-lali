@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
-import { Navigate, Link } from "react-router-dom";
+import {Route, Navigate, Link } from "react-router-dom";
 
 
 
@@ -17,8 +17,8 @@ function Profile() {
     },[profile])
   return (
     <div>
-    {!login?(
-    <>
+
+
     <div className='profile'>
         <h2>{profile.name}</h2>
          <div>
@@ -31,12 +31,9 @@ function Profile() {
 
         <Link to="/users">Return</Link>
     </div>
-    </>
-    ):(
-      <Navigate to="/login" />
-    )
 
-   }
+
+
    </div>
   )
 }

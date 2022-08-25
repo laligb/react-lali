@@ -18,6 +18,21 @@ import Footer from "./Pages/Footer";
 
 function App() {
 
+  const [users, setUsers]=useState([])
+  useEffect(()=>{
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then((res)=> res.json())
+    .then((data)=> setUsers(data))
+  }, [users])
+
+
+
+  users.forEach ((user)=>{
+    localStorage.setItem( user.email, true)
+    }
+  )
+
+
   const [query, setQuery] = useState("");
   //setQuery({ hello: "world"  });
   //console.log(query);
@@ -74,6 +89,7 @@ function App() {
         <Route path="/users" element={<Users/>}/>
         <Route path="/users/:id" element={<Profile/>}/>
         <Route path="/signup" element={<Registration/>}/>
+        <Route path="/profile" element={<Profile/>}/>
       </Routes>
       </div>
       <footer>
