@@ -25,22 +25,22 @@ function Posts() {
 
   return (
     <div>
-      <h3>Posts</h3>
+      <h2>Posts</h2>
 
       {posts.map((post)=>{
         return(
           <div class="post">
             <Link to={`/posts/${post.id}`}><p className="title">{post.title.toUpperCase()}</p></Link>
             <p>{post.body}</p>
+            <div>
+              <img src={require('../Images/post.jpg')} className="little-avatar" alt="avatar" />
+            </div>
+
 
           </div>
 
         )
     })}
-
-
-
-
 
     </div>
   )

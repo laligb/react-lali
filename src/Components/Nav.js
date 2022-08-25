@@ -33,7 +33,7 @@ function Nav() {
           ):
             <Dropdown.Item eventKey="1"> <Link to="/login">Login</Link></Dropdown.Item>
         }
-         <Dropdown.Item eventKey="2"> <Link to="/profile">Profile</Link></Dropdown.Item>
+         <Dropdown.Item eventKey="2"> <Link to="/users/:id">Profile</Link></Dropdown.Item>
          <Dropdown.Item eventKey="3"> <Link to="/posts">Posts</Link></Dropdown.Item>
          <Dropdown.Item eventKey="4"><Link to="/users">Users</Link></Dropdown.Item>
 

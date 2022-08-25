@@ -10,10 +10,28 @@ import Nav from "./Components/Nav";
 import Users from "./Pages/Users";
 import Posts from "./Pages/Posts";
 import Profile from "./Pages/Profile";
+import React, {useState, useEffect, useSearchParams} from 'react'
+import Registration from "./Pages/Registration";
+import Footer from "./Pages/Footer";
 
 
 
 function App() {
+
+  const [query, setQuery] = useState("");
+  //setQuery({ hello: "world"  });
+  //console.log(query);
+
+
+  const SearchMe=(query)=>{
+    if (query !== ""){
+      setQueryExist(true)
+      } else {
+      setQueryExist(false)
+      }
+    }
+
+    const [queryExist, setQueryExist] = useState(false)
 
   return (
     <div className="App">
@@ -22,9 +40,11 @@ function App() {
         <Link to="/"><img src={require('./logo.png')} className="logo" alt="logo" /></Link>
         </logo>
 
+
+
         <form className="d-flex col-lg-3">
-          <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-          <button className="btn btn-outline-info" type="submit">Search</button>
+          <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onSearch={(e)=>setQuery(e.currentTarget.value)}/>
+          <button className="btn btn-outline-info" type="submit" onClick={()=>SearchMe(query)}>Search</button>
         </form>
 
         <div className="col-lg-6">
@@ -40,9 +60,9 @@ function App() {
         </div>
 
 
-
-
       </header>
+
+
       <div className="container">
 
        <Routes>
@@ -53,8 +73,12 @@ function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/users" element={<Users/>}/>
         <Route path="/users/:id" element={<Profile/>}/>
+        <Route path="/signup" element={<Registration/>}/>
       </Routes>
       </div>
+      <footer>
+        <Footer/>
+      </footer>
     </div>
   );
 }

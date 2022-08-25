@@ -65,3 +65,32 @@ h2{
 .title{
   font-weight: bold;
 }
+
+.user{
+ font-family: 'Times New Roman', Times, serif;
+ font-weight: 600;
+ font-size: 20px;
+ background-color: white;
+}
+
+.avatar{
+  width: 200px;
+}
+
+.little-avatar{
+  width: 100px;
+}
+
+.profile{
+
+  margin-top: 20px;
+  margin-bottom: 50px;
+  padding: 50px;
+  width: 70%;
+
+  background-color: white;
+}
+
+footer{
+  background-color: darkcyan;
+}

@@ -1,7 +1,13 @@
 import React, {useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
+import { Navigate, Link } from "react-router-dom";
+
+
 
 function Profile() {
+
+  const [login, setLogin]=useState(false)
+
   const {id}=useParams();
     const [profile, setProfile]=useState({})
     useEffect(()=>{
@@ -11,11 +17,29 @@ function Profile() {
     },[profile])
   return (
     <div>
-         Profile
+    {!login?(
+    <>
+    <div className='profile'>
         <h2>{profile.name}</h2>
-        <p>{profile.email}</p>
+         <div>
+          <img src={require('../Images/avatar.webp')} className="avatar" alt="avatar" />
+        </div>
+
+
+        <p>email: <strong>{profile.email}</strong></p>
+        <p> phone: <strong>{profile.phone}</strong></p>
+
+        <Link to="/users">Return</Link>
     </div>
+    </>
+    ):(
+      <Navigate to="/login" />
+    )
+
+   }
+   </div>
   )
 }
+
 
 export default Profile

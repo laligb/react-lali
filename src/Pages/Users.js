@@ -11,11 +11,17 @@ function Users() {
   }, [users])
 
   return (
-    <div>
+    <div className='col-lg-10'>
+      <h2>Users</h2>
       {users.map((user)=>{
         return(
-          <div>
-            <Link to={`/users/${user.id}`}><p>{user.name}</p></Link>
+          <div className='post'>
+            <div>
+             <img src={require('../Images/avatar.webp')} className="little-avatar" alt="avatar" />
+            </div>
+
+            <Link to={`/users/${user.id}`}><p>#{user.id} {user.name}</p></Link>
+            <p>{user.email}</p>
           </div>
 
         )

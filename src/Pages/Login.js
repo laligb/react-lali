@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {useNavigate} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import Users from './Users';
 
 function Login() {
@@ -20,6 +20,8 @@ function Login() {
 
     }
 
+    JSON.parse(localStorage.getItem('email'))
+
 
 
   // sachiroa gaketdes value
@@ -35,7 +37,7 @@ function Login() {
             <br/>
             <button type='submit' className='login-form login-button' onClick={()=>SuccessLogin()}>Login</button>
         </form>
-        <p>Aren't registered? You can register here</p>
+        <p>Aren't registered? You can register <Link to="/signup">here</Link></p>
       </div>
       <div>
         <img src={require('../Images/login.jpg')} className="login-pic" alt="logo" />

@@ -15,6 +15,10 @@ return (
       <h3 className='title'>{post.title}</h3>
       <br/>
       <p>{post.body}</p>
+      <div>
+          <img src={require('../Images/post.jpg')} className="avatar" alt="post" />
+      </div>
+
       <br/>
       <Link to='/posts'>return</Link>
   </div>
