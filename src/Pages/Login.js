@@ -11,7 +11,7 @@ function Login() {
 
 
  const [user, setUser] = useState("")
-// CORRECTION!!!!!!!!!!!!!!!!!!!!!!!!!!!!! LOCALSTORAGE??????
+
   const login=(e)=>{
     e.preventDefault();
     console.log(JSON.parse(localStorage.getItem(email)))
@@ -28,25 +28,6 @@ function Login() {
     }
 
 }
-
-
-// const HandleLogin=()=>{
-//   if (JSON.parse(localStorage.getItem('auth')) === null){
-//     console.log("Incorrect login")
-//   }else{
-//     console.log("Welcome!")
-//   }
-// }
-
-
-  // const SuccessLogin=(auth)=>{
-  //   console.log(name)
-  //   console.log(password)
-
-  //   }
-
-
-  // sachiroa gaketdes value
 
   return (
     <div className='login'>
@@ -65,15 +46,6 @@ function Login() {
         <img src={require('../Images/login.jpg')} className="login-pic col-12" alt="logo" />
       </div>
 
-      {/* {users.map((value)=>{
-        return(
-          <div>
-            <p>{value.name}</p>
-            <p>{value.username}</p>
-            <button onClick={()=>HandlerPopup(value)}>სრულად</button>
-          </div>
-        )
-      })} */}
     </div>
   )
 }

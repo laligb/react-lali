@@ -2,17 +2,17 @@ import React, { useState } from 'react'
 import Login from './Login'
 
 function Registration() {
-    const [userName, setUsername]=useState(null)
+
     const [email, setEmail]=useState(null)
-    const [pass, setPass]=useState(null)
+
     const [error, setError]=useState(false)
     const [login, setLogin]=useState(false)
     const [forLocal, setforLocal]=useState([])
     const [disabled, setdisabled]=useState(true)
 
     const UserNameHandler=(e)=>{
-        setUsername(e.currentTarget.value)
-        if(userName!==null){
+        setEmail(e.currentTarget.value)
+        if(email!==null){
             setdisabled(false)
         }else{
             setdisabled(true)
@@ -21,12 +21,12 @@ function Registration() {
 
     const HandlerSubmit=(e)=>{
         e.preventDefault()
-        if(userName===null){
+        if(email===null){
             setError(true)
         }
         else{
             setLogin(true)
-            localStorage.setItem('userName', JSON.stringify(userName))
+            localStorage.setItem( email, true)
         }
     }
   return (
@@ -40,8 +40,8 @@ function Registration() {
                 <input
                     type="text"
                     placeholder="UserName"
-                    onChange={UserNameHandler} className='login-form' />
-                <input type="email" placeholder="Email" className='login-form'/>
+                    className='login-form' />
+                <input type="email" placeholder="Email" className='login-form'  onChange={UserNameHandler}/>
                 <input type="password" placeholder="password" className='login-form' />
                 {error &&(
                     <p>Please, fill the values</p>

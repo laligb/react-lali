@@ -16,7 +16,7 @@ function Profile() {
         .then(data=>setProfile(data))
     },[profile])
   return (
-    <div>
+    <div className='row'>
 
 
     <div className='profile'>
@@ -30,6 +30,13 @@ function Profile() {
         <p> phone: <strong>{profile.phone}</strong></p>
 
         <Link to="/users">Return</Link>
+    </div>
+    <div className='profile'>
+      <h5>Address:</h5>
+      {/* <p>Street: {profile.address.street}</p> */}
+      {/* <p>Suite: {profile.address.suite}</p>
+      <p>City: {profile.address.city}</p>
+      <p>Zip-code: {profile.address.zipcode}</p> */}
     </div>
 
 

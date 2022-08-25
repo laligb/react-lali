@@ -13,7 +13,7 @@ function Home() {
   }, [posts])
 
   const [queryExist, setQueryExist] = useState(false)
-
+  console.log(posts)
   const SearchMe=(query)=>{
     if (query !== ""){
       setQueryExist(true)
@@ -21,6 +21,8 @@ function Home() {
       setQueryExist(false)
       }
     }
+
+   let postsNew = posts.filter((month,idx) => idx < 3)
 
 
   return (
@@ -30,20 +32,32 @@ function Home() {
         <h2>Welcome to the homepage!</h2>
         <p>You can do this, I believe in you.</p>
         <div className='row'>
-          <img src={require('../Images/banner.jpg')} className="login-pic col-lg-12 col-md-12 col-sm-12" alt="banner" />
+          <img src={require('../Images/banner.jpg')} className="banner col-lg-12 col-md-12 col-sm-12" alt="banner" />
         </div>
 
-        <div className='row'>
-        {posts.map((post)=>{
-          <p>{post.title}</p>
-        })}
+
+
+        <div className=''>
+
       </div>
+      {postsNew.map((post)=>{
+          return (
+            <>
+          <div className="post col-lg-12 col-md-12 col-sm-12">
+          <h2 className="title">{post.title.toUpperCase()}</h2>
+            <p>{post.body}</p>
+          <Link to={`/posts/${post.id}`}><p>Learn More</p></Link>
+          </div>
+          </>
+          )
+        })}
+
+      <Link to="/posts"><p>More Posts</p></Link>
+
       </main>
       <div>
         <Link to="/about">About</Link>
       </div>
-
-
 
 
       {/* {queryExist ? (

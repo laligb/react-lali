@@ -3,6 +3,7 @@ import { Link, useNavigate} from 'react-router-dom'
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import {useParams} from 'react-router-dom'
 
 
 function Nav() {
@@ -11,6 +12,8 @@ function Nav() {
         localStorage.removeItem('auth')
         navigate('/login')
     }
+
+  const {id}=useParams();
   return (
 
     <>
@@ -33,7 +36,7 @@ function Nav() {
           ):
             <Dropdown.Item eventKey="1"> <Link to="/login">Login</Link></Dropdown.Item>
         }
-         <Dropdown.Item eventKey="2"> <Link to="/users/:id">Profile</Link></Dropdown.Item>
+         {/* <Dropdown.Item eventKey="2"> <Link to="/users/:id">Profile</Link></Dropdown.Item> */}
          <Dropdown.Item eventKey="3"> <Link to="/posts">Posts</Link></Dropdown.Item>
          <Dropdown.Item eventKey="4"><Link to="/users">Users</Link></Dropdown.Item>
 

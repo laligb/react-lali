@@ -45,6 +45,10 @@ h2{
   width: 80%;
 }
 
+.banner{
+   margin: 20px;
+}
+
 .login-button{
   background-color: darkcyan;
   border-color: aliceblue;
@@ -58,13 +62,16 @@ h2{
 .post{
   padding: 20px;
   background-color: white;
-  margin: 10px;
+  margin: 20px;
   border-top: #008CBA;
 }
 
 .title{
   font-weight: bold;
+  text-decoration: none;
+
 }
+
 
 .user{
  font-family: 'Times New Roman', Times, serif;
@@ -75,6 +82,7 @@ h2{
 
 .avatar{
   width: 200px;
+  padding: 20px;
 }
 
 .little-avatar{
@@ -86,8 +94,6 @@ h2{
   margin-top: 20px;
   margin-bottom: 50px;
   padding: 50px;
-  width: 70%;
-
   background-color: white;
 }
 
